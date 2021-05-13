@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: "Muli", sans-serif;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Style the navigation menu */
+.navbar {
+  background-color: #ffffff;
+  position: fixed;
+  padding: 10px 5px;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  display: inline-block;
+}
+
+/* Navigation links */
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  width: 25%;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Company logo styling */
+.navbar a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 20%;
+  width: 30%;
+  margin-top: 10px;
+  float: left;
+  margin-right: 5px;
+  border-radius: 100%;
+}
+
+/* Add a background color on mouse-over */
+.navbar a:hover {
+  background-color: rgb(108, 232, 236);
+  color: black;
+}
+
+/* Style the current/active link */
+.navbar a.active {
+  background-color: #3fb0e4;
+  color: white;
+}
+
+/* Style the nav tabs to the right*/
+.header-right {
+  display: inline-flexbox;
+}
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: rgb(108, 232, 236);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #fff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+  padding-top: 180px;
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  color: #fff;
+  flex: 0.5;
+  cursor: pointer;
+  height: 80vh;
+  position: relative;
+  margin: 10px;
+  transition: flex 0.7s cubic-bezier(0.05, 0.6, 0.4, 0.9);
+}
+
+.panel h3 {
+  font-size: 24px;
+  opacity: 0;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  transition: opacity 0s ease-in 0s;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4) {
+    display: none;
+  }
+
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
+.floating-btn {
+  border-radius: 26.5px;
+  background-color: #001f61;
+  border: 1px solid #001f61;
+  box-shadow: 0 16px 22px -17px #03153b;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 12px 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.floating-btn:hover {
+  background-color: #ffffff;
+  color: #001f61;
+}
+
+.floating-btn:focus {
+  outline: none;
+}
+
+.floating-text {
+  background-color: #001f61;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-family: "Muli";
+  padding: 7px 15px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 998;
+}
+
+.floating-text a {
+  color: #ff7500;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  .social-panel-container.visible {
+    transform: translateX(0px);
+  }
+
+  .floating-btn {
+    right: 10px;
+  }
+}
+.article {
+  display: block;
+}
